@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Password Reset OTP</title>
+  </head>
+
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+      font-family: Arial, Helvetica, sans-serif;
+    "
+  >
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding: 30px 10px">
+          <!-- Card -->
+          <table
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              max-width: 600px;
+              background-color: #ffffff;
+              border-radius: 8px;
+              overflow: hidden;
+              box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            "
+          >
+            <!-- Header -->
+            <tr>
+              <td
+                style="
+                  background-color: #e50914;
+                  padding: 18px;
+                  text-align: center;
+                  color: #ffffff;
+                "
+              >
+                <h2 style="margin: 0; font-size: 22px; letter-spacing: 0.5px">
+                  PASSWORD RESET
+                </h2>
+                <p style="margin: 6px 0 0; font-size: 13px">
+                  OTP Verification Required
+                </p>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td style="padding: 26px; color: #333333">
+                <p style="font-size: 15px; margin: 0 0 12px">
+                  Hello <strong>#{name}</strong>,
+                </p>
+
+                <p
+                  style="
+                    font-size: 14px;
+                    margin: 0 0 20px;
+                    color: #555555;
+                    line-height: 1.6;
+                  "
+                >
+                  We received a request to reset your password.  
+                  Please use the OTP below to continue.
+                </p>
+
+                <!-- OTP Box -->
+                <table
+                  align="center"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="
+                    margin: 20px auto;
+                    border: 2px dashed #e50914;
+                    border-radius: 6px;
+                    background-color: #fafafa;
+                  "
+                >
+                  <tr>
+                    <td
+                      style="
+                        padding: 16px 32px;
+                        font-size: 28px;
+                        font-weight: bold;
+                        letter-spacing: 6px;
+                        color: #e50914;
+                        text-align: center;
+                      "
+                    >
+                      #{otp}
+                    </td>
+                  </tr>
+                </table>
+
+                <p
+                  style="
+                    font-size: 14px;
+                    color: #666666;
+                    text-align: center;
+                    margin-top: 10px;
+                  "
+                >
+                  This OTP is valid for a limited time.
+                </p>
+
+                <p
+                  style="
+                    font-size: 13px;
+                    color: #777777;
+                    margin-top: 20px;
+                    line-height: 1.6;
+                  "
+                >
+                  If you did not request a password reset, please ignore this
+                  email.  
+                  Your account will remain secure.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  background-color: #f0f0f0;
+                  padding: 14px;
+                  text-align: center;
+                  font-size: 12px;
+                  color: #777777;
+                "
+              >
+                © BookMyShow Clone. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

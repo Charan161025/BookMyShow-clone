@@ -8,7 +8,7 @@ export const axiosInstance = axios.create({
   },
 });
 
-// interceptor
+
 axiosInstance.interceptors.request.use(
   (config) => {
    

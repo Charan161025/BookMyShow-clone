@@ -1,5 +1,4 @@
 import { Tabs } from "antd";
-import React from "react";
 import TheatreList from "./TheatreList";
 
 const Partner = () => {
@@ -12,7 +11,6 @@ const Partner = () => {
   ];
   return (
     <div style={{ padding: "0 15px" }}>
-      {/* CSS to make the blue underline RED */}
       <style>
         {`
           .ant-tabs-ink-bar {

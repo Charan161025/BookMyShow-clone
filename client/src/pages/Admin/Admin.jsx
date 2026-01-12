@@ -1,5 +1,4 @@
 import { Tabs } from "antd";
-import React from "react";
 import MovieTable from "./MovieTable";
 import TheatreTable from "./TheatreTable";
 
@@ -19,7 +18,7 @@ const Admin = () => {
 
   return (
     <div style={{ padding: "0px 20px" }}>
-      {/* CSS to change the blue tab line to white */}
+      
       <style>
         {`
           .ant-tabs-ink-bar {

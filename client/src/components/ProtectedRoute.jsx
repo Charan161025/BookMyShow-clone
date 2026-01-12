@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/loaderSlice";
 import { Layout, message } from "antd";
 import { GetCurrentUser } from "../api/user";
@@ -44,7 +44,7 @@ const ProtectedRoute = ({ children }) => {
     }
   }, []);
 
-  // Updated NavItem to accept a specific color (textColor)
+  
   const NavItem = ({ to, icon, label, action, textColor }) => {
     return (
       <div
@@ -54,7 +54,7 @@ const ProtectedRoute = ({ children }) => {
           alignItems: "center",
           gap: "8px",
           cursor: "pointer",
-          color: textColor, // Uses the color passed to it
+          color: textColor, 
           fontSize: "16px",
           padding: "8px 15px",
           fontWeight: "500",
@@ -80,7 +80,7 @@ const ProtectedRoute = ({ children }) => {
           backgroundAttachment: "fixed", 
         }}
       >
-        {/* HEADER */}
+       
         <Header
           style={{
             position: "sticky",
@@ -104,7 +104,7 @@ const ProtectedRoute = ({ children }) => {
 
           <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
             
-            {/* 1. HOME -> RED */}
+          
             <NavItem 
               to="/" 
               label="Home" 
@@ -112,15 +112,22 @@ const ProtectedRoute = ({ children }) => {
               textColor="#ff4d4f" 
             />
             
-            {/* 2. ADMIN/PARTNER -> WHITE */}
+           
             <NavItem 
                 to={user.role === "admin" ? "/admin" : user.role === "partner" ? "/partner" : "/myBookings"}
                 label={user.role === "admin" ? "Admin" : user.role === "partner" ? "Partner" : "My Bookings"}
                 icon={<BookOutlined />}
                 textColor="white"
             />
-            
-            {/* 3. USER NAME -> RED */}
+          {(user.role?.toLowerCase() === "admin" || user.role?.toLowerCase() === "partner") && (
+            <NavItem
+            to="/myBookings"
+            label="My Bookings"
+            icon={<BookOutlined />}
+            textColor="white"
+            />
+          )}
+
             <NavItem 
               to="/profile" 
               label={user.name} 
@@ -128,7 +135,7 @@ const ProtectedRoute = ({ children }) => {
               textColor="#ff4d4f"
             />
             
-            {/* 4. LOGOUT -> WHITE */}
+         
             <NavItem
               to="/login"
               label="Logout"
@@ -142,7 +149,7 @@ const ProtectedRoute = ({ children }) => {
           </div>
         </Header>
 
-        {/* CONTENT */}
+       
         <Content
           style={{
             padding: "20px",

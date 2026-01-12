@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Button, Form, Input, message, Radio } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { RegisterUser } from "../api/user";
@@ -142,7 +142,7 @@ const Register = () => {
 
         <section>
           <Form layout="vertical" onFinish={onFinish}>
-            {/* NAME FIELD */}
+            
             <Form.Item
               label="Name"
               htmlFor="name"
@@ -158,7 +158,7 @@ const Register = () => {
               />
             </Form.Item>
 
-            {/* EMAIL FIELD */}
+            
             <Form.Item
               label="Email"
               name="email"
@@ -173,7 +173,7 @@ const Register = () => {
               />
             </Form.Item>
 
-            {/* PASSWORD FIELD */}
+           
             <Form.Item
               label="Password"
               name="password"
@@ -187,7 +187,7 @@ const Register = () => {
               />
             </Form.Item>
 
-            {/* ROLE SELECTION */}
+           
             <Form.Item
               label="Register as a Partner"
               htmlFor="role"
@@ -207,7 +207,7 @@ const Register = () => {
               </div>
             </Form.Item>
 
-            {/* SUBMIT BUTTON */}
+           
             <Form.Item>
               <Button block htmlType="submit" className="red-btn">
                 Register

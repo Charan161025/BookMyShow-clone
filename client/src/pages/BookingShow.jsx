@@ -19,7 +19,7 @@ const BookingShow = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
-  /* ---------------- FETCH SHOW ---------------- */
+  
   const getData = async () => {
     try {
       dispatch(showLoading());
@@ -37,18 +37,17 @@ const BookingShow = () => {
     getData();
   }, []);
 
-  /* ---------------- SEAT GRID ---------------- */
+  
   const renderSeats = () => {
     if (!show) return null;
 
     const columns = 14;
     const rows = Math.ceil(show.totalSeats / columns);
-    const rowLabelWidth = 36; // must match row label width
+    const rowLabelWidth = 36; 
     const seatGap = 8;
 
     return (
       <div style={{ textAlign: "center" }}>
-        {/* SCREEN TEXT */}
         <p
           style={{
             color: "#ff4d4f",
@@ -60,7 +59,7 @@ const BookingShow = () => {
           Screen this side
         </p>
 
-        {/* RED LINE */}
+        
         <div
           style={{
             width: "60%",
@@ -71,7 +70,6 @@ const BookingShow = () => {
           }}
         />
 
-        {/* COLUMN NUMBERS (ALIGNED) */}
         <div
           style={{
             display: "flex",
@@ -79,10 +77,10 @@ const BookingShow = () => {
             marginBottom: "10px",
           }}
         >
-          {/* LEFT SPACER FOR ROW LABEL */}
+          
           <div style={{ width: rowLabelWidth + 10 }} />
 
-          {/* COLUMN NUMBERS */}
+         
           <div style={{ display: "flex", gap: `${seatGap}px` }}>
             {Array.from({ length: columns }).map((_, i) => (
               <div
@@ -100,7 +98,7 @@ const BookingShow = () => {
           </div>
         </div>
 
-        {/* ROWS */}
+        
         {Array.from({ length: rows }).map((_, row) => {
           const rowLabel = String.fromCharCode(65 + row);
 
@@ -114,7 +112,7 @@ const BookingShow = () => {
                 marginBottom: "10px",
               }}
             >
-              {/* ROW LABEL */}
+             
               <div
                 style={{
                   width: rowLabelWidth,
@@ -127,7 +125,7 @@ const BookingShow = () => {
                 {rowLabel}
               </div>
 
-              {/* SEATS */}
+              
               <div style={{ display: "flex", gap: `${seatGap}px` }}>
                 {Array.from({ length: columns }).map((_, col) => {
                   const seatLabel = `${rowLabel}${col + 1}`;
@@ -171,7 +169,7 @@ const BookingShow = () => {
     );
   };
 
-  /* ---------------- PAYMENT ---------------- */
+  
   const handlePayment = async () => {
     if (!selectedSeats.length) return message.warning("Select seats");
 
@@ -214,7 +212,7 @@ const BookingShow = () => {
     }
   };
 
-  /* ---------------- UI ---------------- */
+  
   return show ? (
     <Row gutter={24} style={{ padding: "20px" }}>
       <Col span={showDetails ? 16 : 24}>

@@ -45,7 +45,6 @@ const DeleteMovieModal = ({
       <div className="modal-overlay">
         <div className="delete-modal-content">
           <div className="modal-header">
-            {/* Removed the 'X' button here */}
             <h2 className="modal-title">Delete Movie</h2>
           </div>
 

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Button, Form, Input, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
@@ -147,7 +147,7 @@ const Login = () => {
               rules={[{ required: true, message: "Email is required" }]}
               className="mb-4"
             >
-              {/* REMOVED ALL custom props/classes from Input to stop conflicts */}
+              
               <Input
                 prefix={<UserOutlined />}
                 placeholder="Enter your Email"
@@ -161,7 +161,7 @@ const Login = () => {
               rules={[{ required: true, message: "Password is required" }]}
               className="mb-5"
             >
-              {/* REMOVED ALL custom props/classes from Input to stop conflicts */}
+            
               <Input.Password
                 prefix={<LockOutlined />}
                 placeholder="Enter your Password"

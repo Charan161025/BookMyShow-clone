@@ -48,7 +48,7 @@ const TheatreTable = () => {
     getData();
   }, []);
 
-  // Define the column definitions
+  
   const baseColumns = [
     {
       title: "Name",
@@ -123,21 +123,21 @@ const TheatreTable = () => {
     },
   ];
 
-  // Apply the styles dynamically
+  
   const columns = baseColumns.map((col, index) => ({
     ...col,
     onHeaderCell: () => ({
       style: {
-        backgroundColor: "transparent", // No background
-        color: index % 2 === 0 ? "#e50914" : "#ffffff", // Alternate Red / White Text
+        backgroundColor: "transparent", 
+        color: index % 2 === 0 ? "#e50914" : "#ffffff", 
         fontWeight: "bold",
-        borderBottom: "1px solid #444", // Subtle border
+        borderBottom: "1px solid #444", 
       },
     }),
     onCell: () => ({
       style: {
-        backgroundColor: "transparent", // No white blocks in body
-        color: "#ffffff", // White text for visibility
+        backgroundColor: "transparent", 
+        color: "#ffffff", 
         borderBottom: "1px solid #444",
       },
     }),
@@ -145,7 +145,7 @@ const TheatreTable = () => {
 
   return (
     <div>
-      {/* Internal Style Tag to override Ant Design defaults for Transparency */}
+      
       <style>
         {`
           .ant-table {

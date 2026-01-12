@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { hideLoading, showLoading } from "../redux/loaderSlice";
 import { getAllBookings } from "../api/booking";
@@ -52,9 +52,9 @@ const MyBookings = () => {
                     alignItems: "flex-start",
                   }}
                 >
-                  {/* POSTER */}
+                 
                   <img
-                    src={booking.show.movie.poster}
+                    src={booking.show?.movie?.poster}
                     alt="Movie Poster"
                     style={{
                       width: "110px",
@@ -65,7 +65,7 @@ const MyBookings = () => {
                     }}
                   />
 
-                  {/* DETAILS */}
+                 
                   <div style={{ flex: 1 }}>
                     <h3
                       style={{
@@ -74,7 +74,7 @@ const MyBookings = () => {
                         fontWeight: "600",
                       }}
                     >
-                      {booking.show.movie.movieName}
+                      {booking.show?.movie?.movieName}
                     </h3>
 
                     <p>
@@ -82,7 +82,7 @@ const MyBookings = () => {
                         Theatre:
                       </span>{" "}
                       <span style={{ color: "#fff" }}>
-                        {booking.show.theatre.name}
+                        {booking.show?.theatre?.name}
                       </span>
                     </p>
 
@@ -91,7 +91,7 @@ const MyBookings = () => {
                         Seats:
                       </span>{" "}
                       <span style={{ color: "#fff" }}>
-                        {booking.seats.join(", ")}
+                        {booking.seats?.join(", ")}
                       </span>
                     </p>
 
@@ -100,12 +100,12 @@ const MyBookings = () => {
                         Date & Time:
                       </span>{" "}
                       <span style={{ color: "#fff" }}>
-                        {moment(booking.show.date).format(
+                        {moment(booking.show?.date).format(
                           "MMM Do YYYY"
                         )}{" "}
                         |{" "}
                         {moment(
-                          booking.show.time,
+                          booking.show?.time,
                           "HH:mm"
                         ).format("hh:mm A")}
                       </span>
@@ -117,8 +117,8 @@ const MyBookings = () => {
                       </span>{" "}
                       <span style={{ color: "#fff" }}>
                         ₹
-                        {booking.seats.length *
-                          booking.show.ticketPrice}
+                        {(booking.seats?.length || 0)*
+                          (booking.show?.ticketPrice || 0)}
                       </span>
                     </p>
 

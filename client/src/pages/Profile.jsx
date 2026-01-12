@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useSelector } from "react-redux";
 
 const Profile = () => {
@@ -6,7 +6,7 @@ const Profile = () => {
 
   return (
     <div className="profile-page-wrapper">
-      {/* --- CSS STYLES --- */}
+      
       <style>
         {`
           /* 1. Page Wrapper */
@@ -161,10 +161,10 @@ const Profile = () => {
         `}
       </style>
 
-      {/* --- COMPONENT JSX --- */}
+      
       <div className="transparent-profile-container">
 
-        {/* Left Side: Avatar & Identity */}
+        
         <div className="profile-left">
           <div className="avatar-container">
             <img
@@ -179,13 +179,13 @@ const Profile = () => {
           <h2 className="user-name">{user?.name}</h2>
           <p className="user-email">{user?.email}</p>
 
-          {/* White Box, Black Text */}
+          
           <div className="role-badge">
             {user.role ? user.role.toUpperCase() : "USER"}
           </div>
         </div>
 
-        {/* Right Side: Details */}
+        
         <div className="profile-right">
 
           <div className="info-group">

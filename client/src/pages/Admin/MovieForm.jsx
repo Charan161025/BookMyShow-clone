@@ -23,7 +23,7 @@ const MovieForm = ({
     poster: "",
   });
 
-  // Calculate Today's Date in YYYY-MM-DD format for validation
+  
   const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const MovieForm = ({
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // --- DATE VALIDATION CHECK ---
+    
     if (formData.releaseDate && formData.releaseDate < today) {
       message.warning("Please enter a valid date (Today or Future only)!");
       return;
@@ -102,7 +102,6 @@ const MovieForm = ({
       <div className="modal-overlay">
         <div className="modal-content">
           <div className="modal-header">
-            {/* 1. X Button Removed. Title Centered. */}
             <h2 className="modal-title">{selectedMovie ? "Edit Movie" : "Add Movie"}</h2>
           </div>
 

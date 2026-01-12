@@ -226,7 +226,6 @@ const ShowModal = ({
               </tr>
             </thead>
             <tbody>
-              {/* Added sorting logic here */}
               {[...shows]
                 .sort((a, b) => a.time.localeCompare(b.time))
                 .map((show) => (

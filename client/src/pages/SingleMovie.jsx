@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { hideLoading, showLoading } from "../redux/loaderSlice";
@@ -14,7 +14,7 @@ const SingleMovie = () => {
   const [queryParam] = useSearchParams();
   const navigate = useNavigate();
 
-  // State for date - using YYYY-MM-DD internally for API compatibility
+  
   const [date, setDate] = useState(
     queryParam.get("date") || dayjs().format("YYYY-MM-DD")
   );
@@ -62,8 +62,8 @@ const SingleMovie = () => {
   }, [params.id, date]);
 
   const handleDateChange = (dateValue, dateString) => {
-    // dateString will follow the format prop of DatePicker (DD-MM-YYYY)
-    // We convert it back to YYYY-MM-DD for the URL and API
+    
+    
     const formattedDate = dateValue ? dateValue.format("YYYY-MM-DD") : dayjs().format("YYYY-MM-DD");
     setDate(formattedDate);
     navigate(`/movie/${params.id}?date=${formattedDate}`);
@@ -89,9 +89,10 @@ const SingleMovie = () => {
                   <DatePicker 
                     onChange={handleDateChange} 
                     value={dayjs(date)} 
-                    format="DD-MM-YYYY" // Displayed as DD-MM-YYYY
+                    format="DD-MM-YYYY" 
                     className="custom-antd-picker"
                     allowClear={false}
+                    disabledDate={(current) => current && current < dayjs().startOf('day')}
                   />
                 </div>
               </div>

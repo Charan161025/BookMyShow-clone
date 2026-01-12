@@ -1,5 +1,5 @@
 import { Button, message, Table } from "antd";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAlltheatresByOwner } from "../../api/theatre";
 import { hideLoading, showLoading } from "../../redux/loaderSlice";
@@ -75,7 +75,6 @@ const TheatreList = () => {
       title: <span style={{ color: "white", fontWeight: "bold" }}>Actions</span>,
       render: (text, data) => {
         return (
-          // Added gap to the container for better spacing
           <div style={{ display: "flex", gap: "10px" }}>
             <Button
               className="custom-ghost-btn"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { message } from "antd"; 
 import { useDispatch } from "react-redux";
 import { getAllMovies } from "../api/movie";
@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <div style={{ width: "100%", padding: "20px", boxSizing: "border-box" }}>
       
-      {/* Styles for Search Input */}
+      
       <style>
         {`
           .my-search-input {
@@ -59,7 +59,7 @@ const Home = () => {
         `}
       </style>
 
-      {/* 1. SEARCH BAR */}
+     
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '30px', width: "100%" }}>
         <div 
           style={{
@@ -93,11 +93,10 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 2. MOVIE GRID */}
+      
       <div
         style={{
           display: "grid",
-          // Changed minmax to 200px to ensure they don't get too small, but fill space nicely
           gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", 
           gap: "25px",
           width: "100%",
@@ -117,18 +116,17 @@ const Home = () => {
                     navigate(`/movie/${movie._id}?date=${moment().format("YYYY-MM-DD")}`);
                   }}
                 >
-                  {/* IMAGE CONTAINER */}
+                  
                   <div style={{ width: "100%", position: "relative" }}>
                     <img
                       src={movie?.poster}
                       alt={movie.movieName}
                       style={{
                         width: "100%",
-                        // KEY CHANGE: aspectRatio forces a 2:3 vertical shape (standard movie poster)
                         aspectRatio: "2 / 3", 
-                        height: "auto", // Let height adjust based on width automatically
+                        height: "auto", 
                         borderRadius: "8px",
-                        objectFit: "cover", // Ensures image fills the rectangle without stretching
+                        objectFit: "cover", 
                         boxShadow: "0 4px 10px rgba(0,0,0,0.5)",
                         border: "1px solid #444",
                       }}

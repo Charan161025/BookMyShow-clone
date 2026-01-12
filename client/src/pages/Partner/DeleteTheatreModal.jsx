@@ -1,5 +1,4 @@
 import { message, Button } from "antd";
-import React from "react";
 import { useDispatch } from "react-redux";
 import { hideLoading, showLoading } from "../../redux/loaderSlice";
 import { deleteTheatre } from "../../api/theatre";
@@ -39,7 +38,7 @@ const DeleteTheatreModal = ({
   };
 
   return (
-    // FULL SCREEN OVERLAY
+    
     <div style={{
       position: "fixed",
       top: 0,
@@ -54,7 +53,7 @@ const DeleteTheatreModal = ({
       zIndex: 1000,
     }}>
       
-      {/* THE CARD */}
+     
       <div style={{
         width: "450px",
         backgroundColor: "rgba(20, 20, 20, 0.9)",
@@ -65,7 +64,7 @@ const DeleteTheatreModal = ({
         boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.8)",
       }}>
         
-        {/* HEADER */}
+        
         <h2 style={{ 
           color: "#ff4d4f", 
           margin: "0 0 15px 0", 
@@ -77,7 +76,7 @@ const DeleteTheatreModal = ({
         
         <hr style={{ border: "0.5px solid #333", marginBottom: "25px" }} />
 
-        {/* CONTENT */}
+      
         <p style={{ 
           color: "white", 
           fontSize: "18px", 
@@ -105,7 +104,7 @@ const DeleteTheatreModal = ({
           This action can't be undone and you'll lose this theatre data.
         </p>
 
-        {/* BUTTONS */}
+        
         <div style={{ 
           display: "flex", 
           justifyContent: "center", 

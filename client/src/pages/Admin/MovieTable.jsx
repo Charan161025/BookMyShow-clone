@@ -41,7 +41,7 @@ const MovieTable = () => {
     getData();
   }, []);
 
-  // === CUSTOM CSS ===
+  
   const customStyles = `
     /* Table Transparency */
     .ant-table, .ant-table-container, .ant-table-content { background: transparent !important; }
@@ -109,7 +109,7 @@ const MovieTable = () => {
   const columns = [
     {
       key: "poster",
-      title: <span style={{ color: "#ff0000" }}>Poster</span>, // Red
+      title: <span style={{ color: "#ff0000" }}>Poster</span>, 
       dataIndex: "poster",
       render: (text) => (
         <img
@@ -123,14 +123,14 @@ const MovieTable = () => {
     },
     {
       key: "movieName",
-      title: <span style={{ color: "#ffffff" }}>Movie Name</span>, // White
+      title: <span style={{ color: "#ffffff" }}>Movie Name</span>, 
       dataIndex: "movieName",
       sorter: (a, b) => a.movieName.localeCompare(b.movieName),
       render: (text) => <span style={{ color: "white", fontWeight: "bold" }}>{text}</span>,
     },
     {
       key: "description",
-      title: <span style={{ color: "#ff0000" }}>Description</span>, // Red
+      title: <span style={{ color: "#ff0000" }}>Description</span>, 
       dataIndex: "description",
       width: 300,
       render: (text) => (
@@ -141,25 +141,25 @@ const MovieTable = () => {
     },
     {
       key: "duration",
-      title: <span style={{ color: "#ffffff" }}>Duration</span>, // White
+      title: <span style={{ color: "#ffffff" }}>Duration</span>, 
       dataIndex: "duration",
       render: (text) => <span style={{ color: "white" }}>{text} Mins</span>,
     },
     {
       key: "genre",
-      title: <span style={{ color: "#ff0000" }}>Genre</span>, // Red
+      title: <span style={{ color: "#ff0000" }}>Genre</span>, 
       dataIndex: "genre",
       render: (text) => <span style={{ color: "white" }}>{text}</span>,
     },
     {
       key: "language",
-      title: <span style={{ color: "#ffffff" }}>Language</span>, // White
+      title: <span style={{ color: "#ffffff" }}>Language</span>, 
       dataIndex: "language",
       render: (text) => <span style={{ color: "white" }}>{text}</span>,
     },
     {
       key: "releaseDate",
-      title: <span style={{ color: "#ff0000" }}>Release Date</span>, // Red
+      title: <span style={{ color: "#ff0000" }}>Release Date</span>, 
       dataIndex: "releaseDate",
       render: (text) => (
         <span style={{ color: "white" }}>
@@ -169,7 +169,7 @@ const MovieTable = () => {
     },
     {
       key: "Actions",
-      title: <span style={{ color: "#ffffff" }}>Actions</span>, // White
+      title: <span style={{ color: "#ffffff" }}>Actions</span>, 
       render: (text, data) => (
         <div style={{ display: "flex", gap: "10px" }}>
           <Button
@@ -211,7 +211,7 @@ const MovieTable = () => {
     <>
       <style>{customStyles}</style>
 
-      {/* Add Movie Button - Centered */}
+      
       <div className="d-flex justify-content-center" style={{ marginBottom: "15px" }}>
         <Button
           onClick={() => {
@@ -256,7 +256,7 @@ const MovieTable = () => {
           fetchMovieData={getData}
           selectedMovie={selectedMovie}
           setSelectedMovie={setSelectedMovie}
-          closable={false} /* Added prop to remove 'X' from top */
+          closable={false} 
         />
       )}
       {isDeleteModalOpen && (
@@ -266,7 +266,7 @@ const MovieTable = () => {
           selectedMovie={selectedMovie}
           setSelectedMovie={setSelectedMovie}
           fetchMovieData={getData}
-          closable={false} /* Added prop to remove 'X' from top */
+          closable={false} 
         />
       )}
     </>

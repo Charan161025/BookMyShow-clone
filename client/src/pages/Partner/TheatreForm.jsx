@@ -1,4 +1,3 @@
-import React from "react";
 import { Col, Modal, Row, Form, Input, Button, message } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import { useDispatch, useSelector } from "react-redux";
@@ -157,13 +156,12 @@ const TheatreForm = ({
         </Row>
         
         <div style={{ display: "flex", gap: "10px", marginTop: "24px" }}>
-          {/* CANCEL BUTTON ON LEFT */}
           <Button 
             onClick={handleCancel}
             style={{ 
               flex: 1, 
               height: "40px",
-              backgroundColor: "#444", // Made lighter for visibility
+              backgroundColor: "#444", 
               color: "white",
               borderColor: "#666",
               fontWeight: "bold"
@@ -172,7 +170,7 @@ const TheatreForm = ({
             Cancel
           </Button>
 
-          {/* SUBMIT BUTTON ON RIGHT */}
+         
           <Button
             type="primary"
             htmlType="submit"

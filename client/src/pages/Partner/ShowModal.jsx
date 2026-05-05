@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import { message } from "antd";
@@ -131,8 +131,8 @@ const ShowModal = ({
         getAllMovies(),
         getShowsByTheatre({ theatreId: selectedTheatre._id }),
       ]);
-      if (mRes.success) setMovies(mRes.data);
-      if (sRes.success) setShows(sRes.data);
+      if (mRes.success) setMovies(mRes.data || []);
+      if (sRes.success) setShows(sRes.data || []);
     } finally {
       dispatch(hideLoading());
     }
@@ -227,15 +227,24 @@ const ShowModal = ({
             </thead>
             <tbody>
               {[...shows]
+                .filter(show => show && show.movie) // ✅ FIX
                 .sort((a, b) => a.time.localeCompare(b.time))
                 .map((show) => (
                   <tr key={show._id}>
                     <td style={s.td}>{show.name}</td>
-                    <td style={s.td}>{moment(show.date).format("DD MMM YYYY")}</td>
+                    <td style={s.td}>
+                      {moment(show.date).format("DD MMM YYYY")}
+                    </td>
                     <td style={s.td}>{show.time}</td>
-                    <td style={s.td}>{show.movie.movieName}</td>
+
+                    {/* ✅ FIXED HERE */}
+                    <td style={s.td}>
+                      {show.movie?.movieName || "No Movie"}
+                    </td>
+
                     <td style={s.td}>₹{show.ticketPrice}</td>
                     <td style={s.td}>{show.totalSeats}</td>
+
                     <td style={s.td}>
                       <EditOutlined
                         style={{
@@ -247,7 +256,7 @@ const ShowModal = ({
                         onClick={() => {
                           setFormData({
                             ...show,
-                            movie: show.movie._id,
+                            movie: show.movie?._id, // ✅ FIX
                             date: moment(show.date).format("YYYY-MM-DD"),
                           });
                           setView("edit");

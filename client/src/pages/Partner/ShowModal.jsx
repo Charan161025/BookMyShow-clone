@@ -124,13 +124,21 @@ const ShowModal = ({
     },
   };
 
+  
   const loadData = async () => {
+    if (!selectedTheatre?._id) return;
+
     try {
       dispatch(showLoading());
+
       const [mRes, sRes] = await Promise.all([
         getAllMovies(),
         getShowsByTheatre({ theatreId: selectedTheatre._id }),
       ]);
+
+      console.log("Selected Theatre:", selectedTheatre);
+      console.log("Shows API:", sRes);
+
       if (mRes.success) setMovies(mRes.data || []);
       if (sRes.success) setShows(sRes.data || []);
     } finally {
@@ -138,9 +146,12 @@ const ShowModal = ({
     }
   };
 
+  
   useEffect(() => {
-    loadData();
-  }, []);
+    if (selectedTheatre?._id) {
+      loadData();
+    }
+  }, [selectedTheatre]);
 
   const handleDelete = async (showId) => {
     if (!window.confirm("Delete this show?")) return;
@@ -193,7 +204,9 @@ const ShowModal = ({
 
         <div style={s.header}>
           <h2>
-            <span style={{ color: RED }}>{selectedTheatre.name}</span>
+            <span style={{ color: RED }}>
+              {selectedTheatre?.name || "Theatre"}
+            </span>
             <span style={{ color: WHITE }}> | Manage Shows</span>
           </h2>
         </div>
@@ -241,14 +254,10 @@ const ShowModal = ({
                     </td>
                     <td style={s.td}>₹{show.ticketPrice}</td>
                     <td style={s.td}>{show.totalSeats}</td>
+
                     <td style={s.td}>
                       <EditOutlined
-                        style={{
-                          color: "#00d4ff",
-                          fontSize: 18,
-                          marginRight: 14,
-                          cursor: "pointer",
-                        }}
+                        style={{ color: "#00d4ff", cursor: "pointer" }}
                         onClick={() => {
                           setFormData({
                             ...show,
@@ -259,11 +268,7 @@ const ShowModal = ({
                         }}
                       />
                       <DeleteOutlined
-                        style={{
-                          color: RED,
-                          fontSize: 18,
-                          cursor: "pointer",
-                        }}
+                        style={{ color: RED, cursor: "pointer" }}
                         onClick={() => handleDelete(show._id)}
                       />
                     </td>
@@ -318,7 +323,7 @@ const ShowModal = ({
                         key === "date"
                           ? moment().format("YYYY-MM-DD")
                           : undefined
-                      } 
+                      }
                       onChange={(e) =>
                         setFormData({ ...formData, [key]: e.target.value })
                       }

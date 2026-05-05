@@ -78,13 +78,12 @@ const TheatreForm = ({
           .custom-form .ant-input::placeholder {
             color: #777 !important;
           }
-          /* Hide arrows in Chrome, Safari, Edge, Opera */
           input::-webkit-outer-spin-button,
           input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
           }
-          /* Hide arrows in Firefox */
+         
           input[type=number] {
             -moz-appearance: textfield;
           }

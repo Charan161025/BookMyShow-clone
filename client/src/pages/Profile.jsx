@@ -9,7 +9,7 @@ const Profile = () => {
       
       <style>
         {`
-          /* 1. Page Wrapper */
+         
           .profile-page-wrapper {
             min-height: 85vh;
             display: flex;
@@ -18,7 +18,7 @@ const Profile = () => {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
           }
 
-          /* 2. Transparent Container */
+         
           .transparent-profile-container {
             position: relative;
             width: 100%;
@@ -43,7 +43,7 @@ const Profile = () => {
             }
           }
 
-          /* 3. Left Section */
+          
           .profile-left {
             flex: 1;
             display: flex;
@@ -52,7 +52,7 @@ const Profile = () => {
             justify-content: center;
           }
 
-          /* Avatar Glow Ring */
+          
           .avatar-container {
             position: relative;
             width: 150px;
@@ -73,7 +73,7 @@ const Profile = () => {
             background-color: #1a1a1a;
           }
 
-          /* 4. Text Styles */
+          
           .user-name {
             font-size: 32px;
             font-weight: 700;
@@ -90,7 +90,7 @@ const Profile = () => {
             margin-bottom: 25px;
           }
 
-          /* 5. Role Badge - UPDATED */
+         
           .role-badge {
             background: #ffffff;  /* White Box */
             color: #000000;       /* Black Text */
@@ -105,7 +105,7 @@ const Profile = () => {
             text-shadow: none;
           }
 
-          /* 6. Right Section */
+          
           .profile-right {
             flex: 1.2;
             display: flex;
@@ -142,7 +142,7 @@ const Profile = () => {
             letter-spacing: 1px;
           }
 
-           /* Status styles */
+           
            .status-active {
              color: #4ade80;
              display: flex;

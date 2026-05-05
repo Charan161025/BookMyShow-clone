@@ -36,7 +36,7 @@ const Forget = () => {
     <div className="main-wrapper">
       <style>
         {`
-          /* --- 1. BACKGROUND --- */
+          
           .main-wrapper {
             background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
@@ -56,7 +56,7 @@ const Forget = () => {
             z-index: 0;
           }
 
-          /* --- 2. DARK GLASS CARD (SIZE KEPT ORIGINAL) --- */
+          
           .content-card {
             position: relative;
             z-index: 1;
@@ -70,7 +70,7 @@ const Forget = () => {
             border: 1px solid rgba(255,255,255,0.1); 
           }
 
-          /* --- TEXT SIZE REDUCED HERE --- */
+         
           .title-white { 
             color: #fff; 
             font-weight: 700; 
@@ -82,7 +82,7 @@ const Forget = () => {
           
           .ant-form-item-label > label { color: #ccc !important; }
 
-          /* --- 3. INPUTS --- */
+         
           .ant-input-affix-wrapper {
             background-color: #333 !important; 
             border: 1px solid #444 !important;
@@ -97,7 +97,7 @@ const Forget = () => {
             color: white !important;
           }
 
-          /* Autofill Fix */
+         
           input:-webkit-autofill,
           input:-webkit-autofill:hover, 
           input:-webkit-autofill:focus, 
@@ -118,7 +118,7 @@ const Forget = () => {
           .ant-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }
           .ant-input-prefix { color: #fff !important; }
 
-          /* --- 4. BUTTON & LINKS --- */
+          
           .red-btn {
             background-color: #e50914 !important;
             border-color: #e50914 !important;

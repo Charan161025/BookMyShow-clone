@@ -227,7 +227,7 @@ const ShowModal = ({
             </thead>
             <tbody>
               {[...shows]
-                .filter(show => show && show.movie) // ✅ FIX
+                .filter(show => show && show.movie)
                 .sort((a, b) => a.time.localeCompare(b.time))
                 .map((show) => (
                   <tr key={show._id}>
@@ -236,15 +236,11 @@ const ShowModal = ({
                       {moment(show.date).format("DD MMM YYYY")}
                     </td>
                     <td style={s.td}>{show.time}</td>
-
-                    {/* ✅ FIXED HERE */}
                     <td style={s.td}>
                       {show.movie?.movieName || "No Movie"}
                     </td>
-
                     <td style={s.td}>₹{show.ticketPrice}</td>
                     <td style={s.td}>{show.totalSeats}</td>
-
                     <td style={s.td}>
                       <EditOutlined
                         style={{
@@ -256,7 +252,7 @@ const ShowModal = ({
                         onClick={() => {
                           setFormData({
                             ...show,
-                            movie: show.movie?._id, // ✅ FIX
+                            movie: show.movie?._id,
                             date: moment(show.date).format("YYYY-MM-DD"),
                           });
                           setView("edit");
@@ -296,6 +292,7 @@ const ShowModal = ({
               ].map(([label, key, type]) => (
                 <div key={key}>
                   <label style={s.label}>{label}</label>
+
                   {type === "select" ? (
                     <select
                       style={s.input}
@@ -317,6 +314,11 @@ const ShowModal = ({
                       type={type || "text"}
                       style={s.input}
                       value={formData[key] || ""}
+                      min={
+                        key === "date"
+                          ? moment().format("YYYY-MM-DD")
+                          : undefined
+                      } 
                       onChange={(e) =>
                         setFormData({ ...formData, [key]: e.target.value })
                       }

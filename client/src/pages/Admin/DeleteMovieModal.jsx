@@ -73,7 +73,7 @@ const DeleteMovieModal = ({
       </div>
 
       <style>{`
-        /* 1. Overlay */
+        
         .modal-overlay {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -85,7 +85,7 @@ const DeleteMovieModal = ({
           z-index: 2000;
         }
 
-        /* 2. Glass Modal Box */
+       
         .delete-modal-content {
           background: rgba(0, 0, 0, 0.85);
           backdrop-filter: blur(15px);
@@ -99,7 +99,7 @@ const DeleteMovieModal = ({
           box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* 3. Header */
+       
         .modal-header {
           display: flex;
           justify-content: center; /* Centered the title since button is gone */
@@ -114,7 +114,7 @@ const DeleteMovieModal = ({
           color: #ff4d4f; /* Red Title */
         }
 
-        /* 4. Body Text */
+       
         .modal-body {
           margin-bottom: 25px;
         }
@@ -135,7 +135,7 @@ const DeleteMovieModal = ({
           color: rgba(255, 255, 255, 0.6);
         }
 
-        /* 5. Footer Buttons */
+        
         .modal-footer {
           display: flex;
           justify-content: center; /* Centered buttons */

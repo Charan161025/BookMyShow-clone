@@ -124,21 +124,13 @@ const ShowModal = ({
     },
   };
 
-  
   const loadData = async () => {
-    if (!selectedTheatre?._id) return;
-
     try {
       dispatch(showLoading());
-
       const [mRes, sRes] = await Promise.all([
         getAllMovies(),
         getShowsByTheatre({ theatreId: selectedTheatre._id }),
       ]);
-
-      console.log("Selected Theatre:", selectedTheatre);
-      console.log("Shows API:", sRes);
-
       if (mRes.success) setMovies(mRes.data || []);
       if (sRes.success) setShows(sRes.data || []);
     } finally {
@@ -146,12 +138,9 @@ const ShowModal = ({
     }
   };
 
-  
   useEffect(() => {
-    if (selectedTheatre?._id) {
-      loadData();
-    }
-  }, [selectedTheatre]);
+    loadData();
+  }, []);
 
   const handleDelete = async (showId) => {
     if (!window.confirm("Delete this show?")) return;
@@ -204,9 +193,7 @@ const ShowModal = ({
 
         <div style={s.header}>
           <h2>
-            <span style={{ color: RED }}>
-              {selectedTheatre?.name || "Theatre"}
-            </span>
+            <span style={{ color: RED }}>{selectedTheatre.name}</span>
             <span style={{ color: WHITE }}> | Manage Shows</span>
           </h2>
         </div>
@@ -240,7 +227,7 @@ const ShowModal = ({
             </thead>
             <tbody>
               {[...shows]
-                .filter(show => show && show.movie)
+                .filter(show => show && show.movie) 
                 .sort((a, b) => a.time.localeCompare(b.time))
                 .map((show) => (
                   <tr key={show._id}>
@@ -249,26 +236,38 @@ const ShowModal = ({
                       {moment(show.date).format("DD MMM YYYY")}
                     </td>
                     <td style={s.td}>{show.time}</td>
+
+                   
                     <td style={s.td}>
                       {show.movie?.movieName || "No Movie"}
                     </td>
+
                     <td style={s.td}>₹{show.ticketPrice}</td>
                     <td style={s.td}>{show.totalSeats}</td>
 
                     <td style={s.td}>
                       <EditOutlined
-                        style={{ color: "#00d4ff", cursor: "pointer" }}
+                        style={{
+                          color: "#00d4ff",
+                          fontSize: 18,
+                          marginRight: 14,
+                          cursor: "pointer",
+                        }}
                         onClick={() => {
                           setFormData({
                             ...show,
-                            movie: show.movie?._id,
+                            movie: show.movie?._id, 
                             date: moment(show.date).format("YYYY-MM-DD"),
                           });
                           setView("edit");
                         }}
                       />
                       <DeleteOutlined
-                        style={{ color: RED, cursor: "pointer" }}
+                        style={{
+                          color: RED,
+                          fontSize: 18,
+                          cursor: "pointer",
+                        }}
                         onClick={() => handleDelete(show._id)}
                       />
                     </td>
@@ -297,7 +296,6 @@ const ShowModal = ({
               ].map(([label, key, type]) => (
                 <div key={key}>
                   <label style={s.label}>{label}</label>
-
                   {type === "select" ? (
                     <select
                       style={s.input}
@@ -319,11 +317,6 @@ const ShowModal = ({
                       type={type || "text"}
                       style={s.input}
                       value={formData[key] || ""}
-                      min={
-                        key === "date"
-                          ? moment().format("YYYY-MM-DD")
-                          : undefined
-                      }
                       onChange={(e) =>
                         setFormData({ ...formData, [key]: e.target.value })
                       }

@@ -28,7 +28,7 @@ const Register = () => {
     <div className="main-wrapper">
       <style>
         {`
-          /* --- 1. SAME BACKGROUND AS LOGIN --- */
+        
           .main-wrapper {
             background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
@@ -48,7 +48,7 @@ const Register = () => {
             z-index: 0;
           }
 
-          /* --- 2. DARK GLASS CARD --- */
+          
           .content-card {
             position: relative;
             z-index: 1;
@@ -62,7 +62,7 @@ const Register = () => {
             border: 1px solid rgba(255,255,255,0.1); 
           }
 
-          /* --- UPDATED TITLE SIZE HERE --- */
+        
           .title-white { 
             color: #fff; 
             font-weight: bold; 
@@ -73,7 +73,7 @@ const Register = () => {
           
           .ant-form-item-label > label { color: #ccc !important; }
 
-          /* --- 3. INPUT FIXES (SAME AS LOGIN) --- */
+          
           .ant-input-affix-wrapper {
             background-color: #333 !important; 
             border: 1px solid #444 !important;
@@ -108,7 +108,7 @@ const Register = () => {
           .ant-input::placeholder { color: rgba(255, 255, 255, 0.7) !important; }
           .ant-input-prefix, .ant-input-suffix { color: #fff !important; }
 
-          /* --- 4. RADIO BUTTONS --- */
+          
           .ant-radio-wrapper { color: #fff !important; }
           .ant-radio-checked .ant-radio-inner {
             border-color: #e50914 !important;
@@ -116,7 +116,7 @@ const Register = () => {
           }
           .ant-radio:hover .ant-radio-inner { border-color: #e50914; }
 
-          /* --- 5. RED BUTTON & LINKS --- */
+         
           .red-btn {
             background-color: #e50914 !important;
             border-color: #e50914 !important;

@@ -220,7 +220,7 @@ const MovieForm = ({
       </div>
 
       <style>{`
-        /* 1. Modal Overlay */
+      
         .modal-overlay {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -232,7 +232,7 @@ const MovieForm = ({
           z-index: 1000;
         }
 
-        /* 2. Glass Modal Box */
+       
         .modal-content {
           background: rgba(0, 0, 0, 0.85);
           backdrop-filter: blur(15px);
@@ -244,7 +244,7 @@ const MovieForm = ({
           color: white;
         }
 
-        /* 3. Header */
+       
         .modal-header {
           display: flex;
           justify-content: center; /* Center the title since X is gone */
@@ -262,7 +262,7 @@ const MovieForm = ({
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        /* 4. Form Layout */
+        
         .form-group {
           margin-bottom: 15px;
           display: flex;
@@ -281,7 +281,7 @@ const MovieForm = ({
           margin-bottom: 20px;
         }
 
-        /* 5. ALL LABELS RED */
+        
         label {
           color: #ff4d4f; /* Bright Red */
           margin-bottom: 5px;
@@ -290,7 +290,7 @@ const MovieForm = ({
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
-        /* 6. Inputs / Selects / Textarea - FIXING FONT HERE */
+        
         input, textarea, select {
           background-color: transparent !important;
           border: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -302,7 +302,7 @@ const MovieForm = ({
           box-sizing: border-box;
           outline: none;
           
-          /* IMPORTANT: Force same font for Description & Date as other inputs */
+         
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
         }
 
@@ -314,19 +314,19 @@ const MovieForm = ({
           font-family: inherit; /* Matches the input font */
         }
 
-        /* 7. DATE PICKER - White Calendar Icon */
+        
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(1);
             cursor: pointer;
         }
         
-        /* 8. Dropdown Options */
+      
         select option {
           background-color: #222;
           color: white;
         }
 
-        /* 9. Buttons */
+       
         .modal-footer {
           display: flex;
           justify-content: flex-end;

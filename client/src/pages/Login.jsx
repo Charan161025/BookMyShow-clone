@@ -28,7 +28,7 @@ const Login = () => {
     <div className="main-wrapper">
       <style>
         {`
-          /* --- 1. BACKGROUND --- */
+         
           .main-wrapper {
             background-image: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
@@ -48,7 +48,7 @@ const Login = () => {
             z-index: 0;
           }
 
-          /* --- 2. DARK CARD --- */
+          
           .content-card {
             position: relative;
             z-index: 1;
@@ -65,9 +65,9 @@ const Login = () => {
           .title-white { color: #fff; font-weight: bold; margin-bottom: 5px; }
           .ant-form-item-label > label { color: #ccc !important; }
 
-          /* --- 3. FIX FOR "BOX IN BOX" AND WHITE BACKGROUND --- */
           
-          /* The Outer Wrapper (The only box we want) */
+          
+          
           .ant-input-affix-wrapper {
             background-color: #333 !important; 
             border: 1px solid #444 !important;
@@ -76,7 +76,7 @@ const Login = () => {
             box-shadow: none !important; /* Removes any outer glow conflicts */
           }
 
-          /* The Inner Input (Make it invisible/transparent so no double box) */
+         
           .ant-input {
             background-color: transparent !important;
             border: none !important;
@@ -84,17 +84,17 @@ const Login = () => {
             color: white !important;
           }
 
-          /* THE NUCLEAR FIX: Stops browser from turning it white on click/autofill */
+        
           input:-webkit-autofill,
           input:-webkit-autofill:hover, 
           input:-webkit-autofill:focus, 
           input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 1000px #333 inset !important; /* Force dark background */
+            -webkit-box-shadow: 0 0 0 1000px #333 inset !important; 
             -webkit-text-fill-color: white !important;
             transition: background-color 5000s ease-in-out 0s;
           }
 
-          /* Focus State: Only change the border color of the wrapper */
+         
           .ant-input-affix-wrapper:focus, 
           .ant-input-affix-wrapper-focused,
           .ant-input-affix-wrapper:focus-within {
@@ -103,17 +103,17 @@ const Login = () => {
              background-color: #333 !important;
           }
 
-          /* Placeholder Text */
+          
           .ant-input::placeholder {
             color: rgba(255, 255, 255, 0.7) !important; 
           }
           
-          /* Icons */
+         
           .ant-input-prefix, .ant-input-suffix { 
             color: #fff !important; 
           }
 
-          /* --- 4. RED BUTTON --- */
+          
           .red-btn {
             background-color: #e50914 !important;
             border-color: #e50914 !important;

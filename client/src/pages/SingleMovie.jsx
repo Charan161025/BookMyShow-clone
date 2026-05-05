@@ -184,7 +184,7 @@ const SingleMovie = () => {
           letter-spacing: 1px;
         }
 
-        /* Date Picker White Box Styling */
+       
         .custom-antd-picker {
           background: #ffffff !important; 
           border: 1px solid #d9d9d9 !important;
@@ -223,7 +223,7 @@ const SingleMovie = () => {
 
         .timings-list { display: flex; gap: 12px; flex-wrap: wrap; flex: 1; }
 
-        /* Timing Pills - White by default */
+       
         .time-pill-rounded {
           padding: 8px 22px;
           border: 1px solid #ffffff; 
@@ -236,7 +236,7 @@ const SingleMovie = () => {
           background: transparent;
         }
 
-        /* Timing Pills - Red on Hover */
+        
         .time-pill-rounded:hover {
           background: #ff4d4f;
           border-color: #ff4d4f;

@@ -43,16 +43,16 @@ const MovieTable = () => {
 
   
   const customStyles = `
-    /* Table Transparency */
+    
     .ant-table, .ant-table-container, .ant-table-content { background: transparent !important; }
     
-    /* Header Background & Border */
+ 
     .ant-table-thead > tr > th { 
       background: rgba(0,0,0,0.8) !important; 
       border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; 
     }
 
-    /* Row Styles */
+    
     .ant-table-tbody > tr > td { 
       border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
@@ -60,7 +60,7 @@ const MovieTable = () => {
       background: rgba(255, 255, 255, 0.1) !important; 
     }
 
-    /* === PAGINATION STYLING === */
+   
     .ant-pagination {
       display: flex !important;
       justify-content: center !important; /* Centers pagination */
@@ -68,7 +68,7 @@ const MovieTable = () => {
       margin-top: 20px !important;
     }
 
-    /* Page Number Box */
+    
     .ant-pagination-item { 
         background: transparent !important; 
         border: 1px solid rgba(255,255,255,0.4) !important;
@@ -78,13 +78,13 @@ const MovieTable = () => {
     }
     .ant-pagination-item a { color: white !important; } 
     
-    /* Active Page */
+   
     .ant-pagination-item-active { 
         border-color: #ff0000 !important; 
     }
     .ant-pagination-item-active a { color: #ff0000 !important; }
 
-    /* Prev/Next Buttons */
+   
     .ant-pagination-prev, .ant-pagination-next {
        display: flex !important;
        align-items: center !important;
@@ -99,7 +99,7 @@ const MovieTable = () => {
         align-items: center !important;
         justify-content: center !important;
     }
-    /* Disabled Arrow Color */
+    
     .ant-pagination-disabled .ant-pagination-item-link {
         color: rgba(255,255,255,0.2) !important;
         border-color: rgba(255,255,255,0.1) !important;

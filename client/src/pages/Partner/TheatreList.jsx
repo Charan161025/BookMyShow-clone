@@ -145,7 +145,7 @@ const TheatreList = () => {
              background: rgba(255, 255, 255, 0.1) !important;
           }
 
-          /* --- FIX FOR HOVER ISSUE --- */
+          
           .custom-ghost-btn {
             background: transparent !important;
             color: white !important;
@@ -158,7 +158,7 @@ const TheatreList = () => {
             background: rgba(255, 255, 255, 0.05) !important; /* Very slight highlight instead of solid white */
           }
           
-          /* Pagination Styles */
+         
           .ant-pagination-item a { color: white !important; }
           .ant-pagination-item-active { border-color: red !important; background: transparent !important; }
           .ant-pagination-item-active a { color: red !important; }

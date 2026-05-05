@@ -159,11 +159,11 @@ const TheatreTable = () => {
           .ant-table-tbody > tr > td {
             border-bottom: 1px solid #444 !important;
           }
-          /* Hover effect: Slight grey tint, keeps text white */
+          
           .ant-table-tbody > tr:hover > td {
             background: rgba(255, 255, 255, 0.1) !important;
           }
-          /* Pagination buttons */
+          
           .ant-pagination-item a {
             color: white !important;
           }
